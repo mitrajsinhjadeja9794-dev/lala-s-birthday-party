@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mukund 🎉</title>
+<style>
+    body {
+        margin:0;
+        padding:0;
+        background: linear-gradient(135deg, #1e1e1e, #3d005a, #000);
+        font-family: 'Poppins', sans-serif;
+        color:white;
+        overflow:hidden;
+    }
+
+    .center {
+        text-align:center;
+        margin-top:10vh;
+        animation: fadeIn 2s ease;
+    }
+
+    h1 {
+        font-size:60px;
+        animation: pop 1.5s ease;
+        text-shadow:0 0 20px #ff00f7;
+    }
+
+    @keyframes pop {
+        0%{transform:scale(0);}
+        80%{transform:scale(1.2);}
+        100%{transform:scale(1);}
+    }
+
+    @keyframes fadeIn {
+        from{opacity:0;}
+        to{opacity:1;}
+    }
+
+    .photo-box {
+        margin-top:50px;
+        animation: slideUp 1.5s ease;
+    }
+
+    @keyframes slideUp {
+        0%{transform:translateY(100px); opacity:0;}
+        100%{transform:translateY(0); opacity:1;}
+    }
+
+    img {
+        width:280px;
+        height:280px;
+        border-radius:20px;
+        box-shadow:0 0 30px #ff00ff;
+        border:3px solid white;
+    }
+
+    .btn {
+        display:inline-block;
+        margin-top:40px;
+        padding:15px 35px;
+        background:#ff00f7;
+        color:white;
+        font-size:22px;
+        border-radius:40px;
+        cursor:pointer;
+        text-decoration:none;
+        box-shadow:0 0 20px #ff00ff;
+        transition:0.3s;
+    }
+
+    .btn:hover {
+        transform:scale(1.1);
+        box-shadow:0 0 35px #ff00ff;
+    }
+
+    /* CONFETTI */
+    .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        top: -10px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh) rotate(360deg);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div id="confetti-container"></div>
+
+<div class="center">
+    <h1>🎉 Happy Birthday Mukund 🎉</h1>
+
+    <div class="photo-box">
+        <img src="mukund.jpg" alt="Mukund Photo">
+    </div>
+
+    <a href="video.html" class="btn">🎬 Inside Video</a>
+</div>
+
+<script>
+// Confetti generator
+for(let i = 0; i < 120; i++){
+    let conf = document.createElement("div");
+    conf.className = "confetti";
+    conf.style.left = Math.random() * 100 + "vw";
+    conf.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+    conf.style.animationDuration = (2 + Math.random()*3) + "s";
+    document.getElementById("confetti-container").appendChild(conf);
+}
+</script>
+
+</body>
+</html>
